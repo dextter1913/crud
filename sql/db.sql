@@ -1,0 +1,9 @@
+DROP DATABASE IF EXISTS  testapi;
+CREATE DATABASE IF NOT EXISTS testapi;
+USE testapi;
+CREATE TABLE cliente(
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR (50) NOT NULL,
+    apellido VARCHAR (50) NOT NULL,
+    telefono VARCHAR (50) NOT NULL
+);
