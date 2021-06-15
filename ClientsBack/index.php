@@ -1,4 +1,4 @@
-<h1><center>hi</center></h1>
+
 <?php
 require_once 'class/autoload.php';
 //echo "informacion: ".file_get_contents('php://input');
