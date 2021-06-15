@@ -1,6 +1,6 @@
 
 <?php
-require_once 'class/autoload.php';
+require_once '../class/autoload.php';
 //echo "informacion: ".file_get_contents('php://input');
 header("Content-Type: JSON");
 switch ($_SERVER['REQUEST_METHOD']) {
@@ -37,7 +37,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
                 $update->updateTelefono();
                 $T++;
             }
-        }
+        } 
         break;
     case 'DELETE':
         $_DELETE = json_decode(file_get_contents('php://input'), true);
@@ -74,7 +74,6 @@ switch ($_SERVER['REQUEST_METHOD']) {
                 echo "No Existen datos";
                 http_response_code(404);
             }else {
-                
                 echo json_encode($userData, JSON_PRETTY_PRINT);
             }
         }
