@@ -8,7 +8,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
         $_POST = json_decode(file_get_contents('php://input'), true);
         error_reporting(0);
         if (!empty($_POST['nombre']) && !empty($_POST['apellido'])) {
-            $insert = new insert($_POST['nombre'], $_POST['apellido'], $_POST['telefono']);
+            $insert = new insert($_POST['nombre'], $_POST['apellido'], $_POST['telefono'], $_POST['idEmpleado']);
             $insert->insertar();
         }else {
             echo "Datos requeridos faltantes";

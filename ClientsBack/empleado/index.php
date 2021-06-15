@@ -1,12 +1,21 @@
-<?php 
+<?php
 header("Content-Type: JSON");
-    switch ($_SERVER['REQUEST_METHOD']) {
-        case 'value':
-            # code...
-            break;
+switch ($_SERVER['REQUEST_METHOD']) {
+    case 'POST':
+        $ContenidoHeader = file_get_contents(('php://input'), true);
+        $_POST = json_decode($ContenidoHeader);
         
-        default:
-            # code...
-            break;
-    }
-?>
+        break;
+    case 'PUT':
+        # code...
+        break;
+    case 'DELETE':
+        # code...
+        break;
+    case 'GET':
+        # code...
+        break;
+    default:
+        # code...
+        break;
+}
