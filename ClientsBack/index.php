@@ -1,5 +1,5 @@
+<h1><center>hi</center></h1>
 <?php
-
 require_once 'class/autoload.php';
 //echo "informacion: ".file_get_contents('php://input');
 header("Content-Type: JSON");
@@ -70,7 +70,13 @@ switch ($_SERVER['REQUEST_METHOD']) {
                 $userData[$i]['telefono'] = $rows['telefono'];
                 $i++;
             }
-            echo json_encode($userData, JSON_PRETTY_PRINT);
+            if (empty($userData)) {
+                echo "No Existen datos";
+                http_response_code(404);
+            }else {
+                
+                echo json_encode($userData, JSON_PRETTY_PRINT);
+            }
         }
         break;
     default:
