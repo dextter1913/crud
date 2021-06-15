@@ -1,5 +1,7 @@
 <?php
-require_once '../class/autoload.php';
+//require_once '../class/autoload.php';
+require_once '../class/class/insert.php';
+echo "informacion: ".file_get_contents('php://input');
 header("Content-Type: JSON");
 switch ($_SERVER['REQUEST_METHOD']) {
     case 'POST':

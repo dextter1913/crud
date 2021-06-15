@@ -22,6 +22,11 @@
             }
             return $conexion;
         }
+
+        public function __destruct()
+        {
+            mysqli_close($this->EstablecerConexion);
+        }
     }
 
     
