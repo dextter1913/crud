@@ -1,4 +1,5 @@
 <?php 
+require_once 'conexion.php';
 class InsertEmpleado  
 {
     private $nombre;
@@ -15,7 +16,7 @@ class InsertEmpleado
         $nombre = $this->nombre;
         $apellido = $this->apellido;
         $telefono = $this->telefono;
-
+        echo $nombre.$apellido.$telefono;
         $conexion = new conexion();
         $conexion->EstablecerConexion()->query("INSERT INTO empleado(nombre, apellido, telefono) VALUES('$nombre','$apellido','$telefono')");
         print 'Creado';

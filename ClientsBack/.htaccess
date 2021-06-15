@@ -4,5 +4,6 @@ RewriteEngine On
 # Reescribir al index
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.+?)/?$ cliente/index.php?id=$1 [L,QSA]
-RewriteRule ^(.+?)/?$ empleado/index.php?id=$2 [L,QSA]
+RewriteRule ^(.*)$ %{ENV:BASE}cliente/index.php?id=$1 [QSA,L]
+#RewriteRule ^(.+?)/?$ cliente/index.php?id=$1 [L,QSA]
+#RewriteRule ^(.+?)/?$ empleado/index.php?id=$2 [L,QSA]
