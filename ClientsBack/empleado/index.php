@@ -8,7 +8,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
         $ContenidoHeader = file_get_contents(('php://input'), true);
         $_POST = json_decode($ContenidoHeader);
         var_dump($_POST);
-        $insertarEmpleado = new InsertEmpleado($_POST['nombre'],$_POST['apellido'],$_POST['telefono']);
+        $insertarEmpleado = new InsertEmpleado($_POST['nombre'], $_POST['apellido'], $_POST['telefono']);
         $insertarEmpleado->InsertarEmpleado();
         break;
     case 'PUT':
@@ -28,6 +28,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
             if (empty($userData)) {
                 echo 'no existe';
                 http_response_code(404);
+                var_dump($userData);
             } else {
                 echo json_encode($userData);
             }
@@ -46,7 +47,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
             if (empty($userData)) {
                 echo "No Existen datos";
                 http_response_code(404);
-            }else {
+            } else {
                 echo json_encode($userData, JSON_PRETTY_PRINT);
             }
         }

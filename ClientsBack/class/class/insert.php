@@ -23,8 +23,10 @@ class insert
         $idEmpleado = $this->idEmpleado;
         $conexion = new conexion();
         $conexion->EstablecerConexion()->query("INSERT INTO cliente(nombre, apellido, telefono, idEmpleado) VALUES('$nombre','$apellido','$telefono','$idEmpleado')");
-        print 'Creado';
+        $Message['Message'] = 'Creado';
+        echo json_encode($Message);
         http_response_code(201);
     }
 }
+
 
